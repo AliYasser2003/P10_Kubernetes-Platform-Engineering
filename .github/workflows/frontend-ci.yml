@@ -1,0 +1,30 @@
+name: Frontend CI
+
+on:
+  push:
+    paths:
+      - 'app/frontend/**'
+    branches:
+      - main
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build Docker image
+        run: |
+          docker build -t alyyasser10/project10-frontend:latest ./app/frontend
+
+      - name: Push Docker image
+        run: |
+          docker push alyyasser10/project10-frontend:latest
