@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 
 app.get("/api", (req, res) => {
   res.json({
-    message: "Backend API Running"
+    message: "Backend API Running v2"
   });
 });
 
