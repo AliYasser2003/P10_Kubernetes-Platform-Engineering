@@ -16,11 +16,19 @@ module "eks" {
     default = {
       instance_types = ["t3.medium"]
 
-      min_size     = 1
-      max_size     = 2
-      desired_size = 1
+      min_size     = 4
+      max_size     = 5
+      desired_size = 4
+
+
+      force_update_version = true
+
+      update_config = {
+        max_unavailable = 1
+      }
     }
   }
+
 
   tags = {
     Project = "Project10"

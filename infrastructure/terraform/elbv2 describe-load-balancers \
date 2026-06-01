@@ -1,0 +1,131 @@
+{
+    "SecurityGroups": [
+        {
+            "GroupId": "sg-04e27b437314de165",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/cluster/project10-eks",
+                    "Value": "owned"
+                }
+            ],
+            "VpcId": "vpc-0d2cabda0c1bc7617",
+            "SecurityGroupArn": "arn:aws:ec2:eu-north-1:107759015479:security-group/sg-04e27b437314de165",
+            "OwnerId": "107759015479",
+            "GroupName": "k8s-elb-a1d9267f0d7cd46788419776bccedf54",
+            "Description": "Security group for Kubernetes ELB a1d9267f0d7cd46788419776bccedf54 (istio-system/istio-ingressgateway)",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 80,
+                    "ToPort": 80,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 15443,
+                    "ToPort": 15443,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 15021,
+                    "ToPort": 15021,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "icmp",
+                    "FromPort": 3,
+                    "ToPort": 4,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 31400,
+                    "ToPort": 31400,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 443,
+                    "ToPort": 443,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-02264272d1ed9fbd0",
+            "IpPermissionsEgress": [],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "project10-vpc-default"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "Project10"
+                }
+            ],
+            "VpcId": "vpc-0d2cabda0c1bc7617",
+            "SecurityGroupArn": "arn:aws:ec2:eu-north-1:107759015479:security-group/sg-02264272d1ed9fbd0",
+            "OwnerId": "107759015479",
+            "GroupName": "default",
+            "Description": "default VPC security group",
+            "IpPermissions": []
+        }
+    ]
+}
