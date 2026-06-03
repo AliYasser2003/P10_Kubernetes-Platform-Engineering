@@ -269,3 +269,6 @@ Through this project I gained hands-on experience with:
 ## Conclusion
 
 This project demonstrates a complete Platform Engineering workflow on AWS using modern cloud-native technologies. It combines Infrastructure as Code, GitOps, observability, and service mesh capabilities into a production-inspired Kubernetes platform.
+
+## Author
+Ali Yasser
