@@ -14,15 +14,15 @@ The platform follows GitOps principles, supports multi-environment deployments, 
 
 ## Key Features
 
-* Infrastructure as Code using Terraform
-* Amazon EKS cluster provisioning
+* Service Mesh implementation using Istio
+* Canary deployment strategy using Istio VirtualService and DestinationRule
 * GitOps deployment workflow using ArgoCD
 * Multi-environment architecture (Development / Staging / Production)
+* Infrastructure as Code using Terraform
+* Amazon EKS cluster provisioning
 * CI/CD automation using GitHub Actions
 * Monitoring with Prometheus
 * Visualization and dashboards with Grafana
-* Service Mesh implementation using Istio
-* Canary deployment strategy using Istio VirtualService and DestinationRule
 
 ---
 
@@ -65,45 +65,10 @@ Prometheus collects cluster metrics while Grafana provides dashboard visualizati
 ### Service Mesh Layer
 
 Istio provides advanced traffic management capabilities using:
-
 * VirtualService
 * DestinationRule
 
 Traffic can be routed between application versions to support progressive delivery and canary deployments.
-
----
-
-## Deployment Flow
-
-Developer
-
-↓
-
-GitHub Repository
-
-↓
-
-GitHub Actions
-
-↓
-
-Docker Hub
-
-↓
-
-GitOps Repository
-
-↓
-
-ArgoCD
-
-↓
-
-Amazon EKS
-
-↓
-
-Kubernetes Workloads
 
 ---
 
@@ -112,17 +77,14 @@ Kubernetes Workloads
 The platform implements canary deployment capabilities using Istio traffic management resources.
 
 Two application versions were deployed simultaneously:
-
 * frontend-v1
 * frontend-v2
 
 Traffic routing was controlled through:
-
 * VirtualService
 * DestinationRule
 
 Traffic distribution scenarios tested during validation:
-
 * 100 / 0 rollout
 * 90 / 10 canary deployment
 * 50 / 50 traffic distribution
@@ -197,68 +159,33 @@ This approach demonstrates progressive delivery techniques commonly used in prod
 ### EKS Endpoint Mismatch
 
 **Issue**
-
 kubectl was pointing to an outdated EKS endpoint after cluster recreation.
 
 **Solution**
-
 ```bash
 aws eks update-kubeconfig --region eu-north-1 --name project10-eks
 ```
 
-### ArgoCD Image Pull Failures
-
-**Issue**
-
-ArgoCD pods entered ImagePullBackOff state.
-
-**Cause**
-
-Temporary connectivity issues reaching the container registry.
-
-**Solution**
-
-Recreated workloads after registry connectivity was restored.
-
 ### Istio Sidecar Injection Timeout
 
 **Issue**
-
 Pods failed to create due to admission webhook timeout.
 
 **Error**
-
 ```text
 failed calling webhook "namespace.sidecar-injector.istio.io"
 ```
 
 **Solution**
-
 Validated Istio control plane health and redeployed workloads.
 
-### Grafana Access
-
-**Issue**
-
-Grafana UI required local access.
-
-**Solution**
-
-```bash
-kubectl port-forward svc/prometheus-grafana 3000:80 -n monitoring
-```
-
----
 
 ## Lessons Learned
 
 Through this project I gained hands-on experience with:
-
 * Platform Engineering concepts
 * Kubernetes multi-environment deployments
 * GitOps workflows using ArgoCD
-* Infrastructure as Code with Terraform
-* Observability using Prometheus and Grafana
 * Service Mesh architecture using Istio
 * Canary deployment strategies
 * Progressive delivery techniques
