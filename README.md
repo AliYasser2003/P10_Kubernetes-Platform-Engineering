@@ -115,7 +115,7 @@ This approach demonstrates progressive delivery techniques commonly used in prod
 ### ArgoCD Frontend-Staging
 ![ArgoCD Frontend-Staging](Project-10_Screenshots/Frontend-Staging.png)
 
-### ArgoCD Backend-Pro
+### ArgoCD Backend-Prod
 ![ArgoCD Backend-Prod](Project-10_Screenshots/Backend-Prod.png)
 
 ### Git-Actions_CICD
@@ -196,6 +196,11 @@ Through this project I gained hands-on experience with:
 ## Conclusion
 
 This project demonstrates a complete Platform Engineering workflow on AWS using modern cloud-native technologies. It combines Infrastructure as Code, GitOps, observability, and service mesh capabilities into a production-inspired Kubernetes platform.
+
+## Related Repositories
+
+GitOps Repository:
+https://github.com/AliYasser2003/P10_Kubernetes-Platform-GitOps
 
 ## Author
 Ali Yasser
