@@ -159,7 +159,7 @@ This approach demonstrates progressive delivery techniques commonly used in prod
 ### EKS Endpoint Mismatch
 
 **Issue**
-kubectl was pointing to an outdated EKS endpoint after cluster recreation.
+: kubectl was pointing to an outdated EKS endpoint after cluster recreation.
 
 **Solution**
 ```bash
@@ -169,7 +169,7 @@ aws eks update-kubeconfig --region eu-north-1 --name project10-eks
 ### Istio Sidecar Injection Timeout
 
 **Issue**
-Pods failed to create due to admission webhook timeout.
+: Pods failed to create due to admission webhook timeout.
 
 **Error**
 ```text
@@ -177,7 +177,7 @@ failed calling webhook "namespace.sidecar-injector.istio.io"
 ```
 
 **Solution**
-Validated Istio control plane health and redeployed workloads.
+: Validated Istio control plane health and redeployed workloads.
 
 
 ## Lessons Learned
